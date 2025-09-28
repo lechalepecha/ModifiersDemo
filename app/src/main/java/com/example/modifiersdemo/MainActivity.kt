@@ -1,6 +1,7 @@
 package com.example.modifiersdemo
 
 import android.R
+import android.media.Image
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,6 +14,8 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -47,6 +50,14 @@ fun DemoScreen(modifier: Modifier = Modifier){
     )
 }
 
+@Composable
+fun CustomImage(image: Int, modifier: Modifier = Modifier){
+    Image(
+        painter = painterResource(image),
+        contentDescription = null,
+        modifier
+    )
+}
 
 @Preview(showBackground = true)
 @Composable
