@@ -1,9 +1,11 @@
 package com.example.modifiersdemo
 
+import android.R
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -14,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.modifiersdemo.ui.theme.ModifiersDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,8 +35,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier){
+    val mymodifier = modifier
+        .border(width = 2.dp, color = Color.Gray)
+        .padding(all = 35.dp)
+
     Text(
         "Hello Compose",
+        mymodifier,
         fontSize = 40.sp,
         fontWeight = FontWeight.Bold
     )
